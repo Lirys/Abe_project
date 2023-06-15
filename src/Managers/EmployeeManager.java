@@ -17,16 +17,16 @@ public class EmployeeManager {
             ArrayList<Employee> employee_list = new ArrayList<>();
             try {
                 Scanner sc = new Scanner(new FileReader(employeeFile));
-                while (sc.hasNextLine()) {
+                while (sc.hasNext()) {
                     try {
                         Employee employee = new Employee();
                         employee.setEmployeeID(sc.nextInt());
                         employee.setEmployeeName(sc.next());
-                        employee.setEmployeeID(sc.nextInt());
+                        employee.setRatePerDay(sc.nextDouble());
                         employee_list.add(employee);
                     } catch ( Exception e ) {
                         System.out.println("Something happened!");
-                        System.out.println(e.getMessage());
+                        e.printStackTrace();
                     }
                 }
                 sc.close();
@@ -61,8 +61,7 @@ public class EmployeeManager {
                     bw.write(" ");
                     bw.write(employee.getEmployeeName().toUpperCase());
                     bw.write(" ");
-                    bw.write( String.valueOf(employee.getRatePerDay()));
-                    bw.write("\n");
+                    bw.write(employee.getRatePerDay() + "\n");
                     bw.close();
                 } catch (IOException e) {
                     e.printStackTrace();

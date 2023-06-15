@@ -14,20 +14,19 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int choice = -1;
         do{
-            int id;
-            String name;
-            double rate_per_day;
+            int id = 0;
+            String name = "";
+            double rate_per_day = 0;
             Utils.displayMenu();
             try {
                 System.out.print("What's on your mind? ");
-                choice = Integer.parseInt(scanner.next());
+                choice = scanner.nextInt();
             } catch ( Exception e ) {
                 System.out.println("Error: " + e.getMessage());
             }
             if(choice > 0){
-                switch (choice){
-                    case 1:
-                        try {
+                switch (choice) {
+                    case 1 -> {
                             System.out.println("----------------------------------");
                             System.out.print("Enter id: ");
                             id = scanner.nextInt();
@@ -41,9 +40,7 @@ public class Main {
                             System.out.println("Employee ID: " + id);
                             System.out.println("Employee Name: " + name);
                             System.out.println("Employee Rate/Day: " + rate_per_day);
-                        } catch (Exception e) {
-                            System.out.println("Error: " + e.getMessage());
-                        }
+                    }
                 }
             }
         }while (choice > 0);
