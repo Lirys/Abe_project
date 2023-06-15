@@ -1,13 +1,14 @@
-import java.net.URI;
+package Managers;
+
+import Exceptions.IDError;
+import Objects.CutOffObject;
+
 import java.util.*;
-
-import org.xml.sax.ErrorHandler;
-
 import java.io.*;
 
-public class CutOffCRUD {
+public class CutoffManager {
         File employeeFile;
-        public CutOffCRUD() {
+        public CutoffManager() {
             employeeFile = new File("EmployeeFile.txt");
         }
 

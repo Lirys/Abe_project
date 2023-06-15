@@ -1,8 +1,18 @@
-public class EmployeeObject {
+package Objects;
+
+public class Employee {
 
     private int employeeID;
     private String employeeName;
-    private int rate_per_day;
+    private double rate_per_day;
+
+    public Employee() {}
+
+    public Employee(int employeeID, String employeeName, double rate_per_day){
+        this.employeeID = employeeID;
+        this.employeeName = employeeName;
+        this.rate_per_day = rate_per_day;
+    }
 
     public void setEmployeeID(int employeeID) {
         this.employeeID = employeeID;
@@ -20,11 +30,11 @@ public class EmployeeObject {
         return employeeName;
     }
 
-    public void setRatePerDay(int rate_per_day) {
+    public void setRatePerDay(double rate_per_day) {
         this.rate_per_day = rate_per_day;
     }
 
-    public int getRatePerDay() {
+    public double getRatePerDay() {
         return rate_per_day;
     }
 }
